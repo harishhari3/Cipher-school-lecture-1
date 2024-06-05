@@ -1,0 +1,2 @@
+In object-oriented programming (OOP), a class is a blueprint or template for creating objects, which are instances of that class. A class defines the properties (data members) and behaviors (methods) that the objects of that class will have.
+An object is a specific instance of a class, created from the class blueprint. Each object has its own unique set of data (values for its properties), and can perform the behaviors (methods) defined in its class.
