@@ -1,0 +1,5 @@
+Operands
+Operands are the values or variables on which operators act. For example, in the expression a + b, a and b are operands.
+
+Operators
+Operators are special symbols that perform operations on operands. Java supports several types of operators:
