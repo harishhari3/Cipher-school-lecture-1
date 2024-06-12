@@ -1,0 +1,59 @@
+method overloading 
+class Calculator {
+    // Method to add two integers
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    // Overloaded method to add three integers
+    public int add(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    // Overloaded method to add two double values
+    public double add(double a, double b) {
+        return a + b;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();
+        System.out.println("Sum of 2 and 3: " + calc.add(2, 3)); // Calls add(int, int)
+        System.out.println("Sum of 2, 3 and 4: " + calc.add(2, 3, 4)); // Calls add(int, int, int)
+        System.out.println("Sum of 2.5 and 3.5: " + calc.add(2.5, 3.5)); // Calls add(double, double)
+    }
+}
+method overriding 
+class Animal {
+    // Method in the superclass
+    public void makeSound() {
+        System.out.println("Some generic animal sound");
+    }
+}
+
+class Dog extends Animal {
+    // Overriding the makeSound method in the subclass
+    @Override
+    public void makeSound() {
+        System.out.println("Bark");
+    }
+}
+
+class Cat extends Animal {
+    // Overriding the makeSound method in the subclass
+    @Override
+    public void makeSound() {
+        System.out.println("Meow");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal myDog = new Dog();
+        Animal myCat = new Cat();
+        
+        myDog.makeSound(); // Calls Dog's makeSound method
+        myCat.makeSound(); // Calls Cat's makeSound method
+    }
+}
