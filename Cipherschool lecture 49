@@ -1,0 +1,46 @@
+
+    Node root;
+
+    // Method to check if two trees are isomorphic
+    boolean isIsomorphic(Node root1, Node root2) {
+        // If both trees are empty, they are isomorphic
+        if (root1 == null && root2 == null) {
+            return true;
+        }
+
+        // If one of the trees is empty and the other is not, they are not isomorphic
+        if (root1 == null || root2 == null) {
+            return false;
+        }
+
+        // If the root nodes have different data, they are not isomorphic
+        if (root1.data != root2.data) {
+            return false;
+        }
+
+        // Check if the subtrees are isomorphic in both possible ways:
+        // 1. No mirroring of subtrees
+        // 2. Mirroring of subtrees (left with right and right with left)
+        return (isIsomorphic(root1.left, root2.left) && isIsomorphic(root1.right, root2.right))
+                || (isIsomorphic(root1.left, root2.right) && isIsomorphic(root1.right, root2.left));
+    }
+
+    public static void main(String[] args) {
+        BinaryTree tree1 = new BinaryTree();
+        tree1.root = new Node(1);
+        tree1.root.left = new Node(2);
+        tree1.root.right = new Node(3);
+        tree1.root.left.left = new Node(4);
+        tree1.root.left.right = new Node(5);
+
+        BinaryTree tree2 = new BinaryTree();
+        tree2.root = new Node(1);
+        tree2.root.left = new Node(3);
+        tree2.root.right = new Node(2);
+        tree2.root.right.left = new Node(5);
+        tree2.root.right.right = new Node(4);
+
+        if (tree1.isIsomorphic(tree1.root, tree2.root)) {
+            System.out.println("The trees are isomorphic.");
+        } else {
+   
